@@ -1,12 +1,13 @@
 <template>
-
   <div class="app">
     <div class="todo">
       <div class="title">
       <h1>Todo List</h1>
       </div>
+      <div class="aaa">
         <input type="text" class="input-add" name="name" id="name" v-model="newTodo" />
          <button class="add" @click="insertTodo">追加</button>
+      </div>
       <div v-for="item in todoLists" :key="item.id">
       <input class="input-update" type="text" v-model="item.name" />
       <div class="button">
@@ -29,7 +30,7 @@ export default {
   },
   methods: {
     async getTodo() {
-      const resData = await axios.get("http://127.0.0.1:8000/api/todo/");
+      const resData = await axios.get("https://murmuring-reef-20196.herokuapp.com/api/todo");
       this.todoLists = resData.data.data;
       this.newTodo = "";
     },
@@ -37,18 +38,18 @@ export default {
       const sendData = {
         name: this.newTodo,
       };
-      await axios.post("http://127.0.0.1:8000/api/todo/", sendData);
+      await axios.post("https://murmuring-reef-20196.herokuapp.com/api/todo", sendData);
       await this.getTodo();
     },
     async updateTodo(id, name) {
       const sendData = {
         name: name,
       };
-      await axios.put("http://127.0.0.1:8000/api/todo/" + id, sendData);
+      await axios.put("https://murmuring-reef-20196.herokuapp.com/api/todo" + id, sendData);
       await this.getTodo();
     },
     async deleteTodo(todo) {
-      await axios.delete("http://127.0.0.1:8000/api/todo/" + todo);
+      await axios.delete("https://murmuring-reef-20196.herokuapp.com/api/todo" + todo);
       await this.getTodo();
     },
   },
@@ -281,5 +282,8 @@ input, select {
   background-color: #71FADC;
 }
 
+@media screen and (max-width : 768px){
+
+}
 
 </style>
