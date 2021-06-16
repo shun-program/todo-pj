@@ -45,11 +45,11 @@ export default {
       const sendData = {
         name: name,
       };
-      await axios.put("https://murmuring-reef-20196.herokuapp.com/api/todo" + id, sendData);
+      await axios.put("https://murmuring-reef-20196.herokuapp.com/api/todo/" + id, sendData);
       await this.getTodo();
     },
     async deleteTodo(todo) {
-      await axios.delete("https://murmuring-reef-20196.herokuapp.com/api/todo" + todo);
+      await axios.delete("https://murmuring-reef-20196.herokuapp.com/api/todo/" + todo);
       await this.getTodo();
     },
   },
