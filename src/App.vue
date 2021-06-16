@@ -282,15 +282,14 @@ input, select {
 @media screen and (max-width : 768px){
 
 .add {
-      position: absolute;
-      width: 43px;
-      text-align: center;
-      padding: 11px 8px;
+  position: absolute;
+  width: 43px;
+  text-align: center;
+  padding: 11px 8px;
 }
 
 .input-add {
   padding: 22px 0px 22px 5px;;
-
 }
 
 .input-update {
@@ -302,16 +301,16 @@ input, select {
   display: inline-block;
   margin-right: 40%;
   min-width: 60px;
+  max-height: 40px;
 }
 
-.update {
+/* .update {
   position: relative;
-  
-  
-}
+} */
 
 .delete {
   margin: 0;
 }
+
 }
 </style>
