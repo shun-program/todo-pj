@@ -4,10 +4,8 @@
       <div class="title">
       <h1>Todo List</h1>
       </div>
-      <div class="aaa">
         <input type="text" class="input-add" name="name" id="name" v-model="newTodo" />
          <button class="add" @click="insertTodo">追加</button>
-      </div>
       <div v-for="item in todoLists" :key="item.id">
       <input class="input-update" type="text" v-model="item.name" />
       <div class="button">
@@ -169,13 +167,14 @@ input, select {
 
 .app {
   min-height: 100vh;
+  width: 100%;
   background-color: #2D197C;
   
 }
 
 .todo{
   background-color: #fff;
-  width: 50vw;
+  min-width: 50vw;
   padding: 30px;
   position: absolute;   
   top: 50%;
@@ -198,7 +197,6 @@ input, select {
   padding: 8px 16px;
   border-radius: 5px;
   cursor: pointer;
-  transition: 0.5s;
   float: right;
   margin-top: 10px;
   margin-bottom: 10px;  
@@ -269,7 +267,6 @@ input, select {
   padding: 8px 16px;
   border-radius: 5px;
   cursor: pointer;
-  transition: 0.4s;
   outline: none;
   margin-top: 5px;
   margin-left: 5px;
@@ -284,6 +281,37 @@ input, select {
 
 @media screen and (max-width : 768px){
 
+.add {
+      position: absolute;
+      width: 43px;
+      text-align: center;
+      padding: 11px 8px;
 }
 
+.input-add {
+  padding: 22px 0px 22px 5px;;
+
+}
+
+.input-update {
+  padding: 30px 0px 30px 5px;
+}
+
+.button {
+  position: absolute;
+  display: inline-block;
+  margin-right: 40%;
+  min-width: 60px;
+}
+
+.update {
+  position: relative;
+  
+  
+}
+
+.delete {
+  margin: 0;
+}
+}
 </style>
