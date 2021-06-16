@@ -301,7 +301,6 @@ input, select {
   display: inline-block;
   margin-right: 40%;
   min-width: 60px;
-  max-height: 20px;
 }
 
 /* .update {
